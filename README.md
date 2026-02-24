@@ -21,6 +21,7 @@ FileDozer natively intercepts text and source code before compression and downco
 * **Pre-Shared Static Dictionaries**: Bypasses traditional dictionary bloat by mapping the 128 most common programming keywords, punctuations, and English structures natively into the executable. 
 * **1-Byte Perfect Bounding**: UT4 maps exactly 128 predefined tokens, perfectly exploiting the mathematical bounds of ULEB128 to ensure all common syntax costs exactly 1 Byte.
 * **Sequence Run-Length Encoding (RLE)**: Repeated characters, blank spaces, or code indentations are squashed into coordinate bounds rather than serialized strings.
+* **Caution:** UT4 makes some files tiny, but not all. Some small files (>0.5KB or 500B) may be slightly larger than UTF-8 versions. Since UT4 encoding is small, **UT4 cannot be used with notepad or any type of code. Only use UT4 for files only you want to view, like extremely large files.**
 
 ## Hardware Information
 I ran everything on a i7-7700 with no GPU and 16 GB of dual-channel RAM at 2400 Mhz on Windows 11 IoT Enterprise LTSC 24H2. Don't worry, I know that LTSC has some requirements stripped down. I have added a dynamic requirement checker that ensures FileDozer runs on most Windows 11 systems.
