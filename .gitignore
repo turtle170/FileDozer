@@ -1,0 +1,5 @@
+.agent
+.agents\rules
+src-tauri/target
+.antigravityrules
+node_modules
