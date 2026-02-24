@@ -25,6 +25,14 @@ FileDozer natively intercepts text and source code before compression and downco
 ## Hardware Information
 I ran everything on a i7-7700 with no GPU and 16 GB of dual-channel RAM at 2400 Mhz on Windows 11 IoT Enterprise LTSC 24H2. Don't worry, I know that LTSC has some requirements stripped down. I have added a dynamic requirement checker that ensures FileDozer runs on most Windows 11 systems.
 
+It indexed 3.3TB in 39 seconds, with 200GB from a Lexar NM620 NVMe SSD. That was indexed in 4 seconds.
+
+## ⚠️ Security precautions
+FileDozer requires admin permissions to use the MFT of your drives to index them lightning fast.
+
+Thus, if you are a non-admin, I strongly recommend you do not use FileDozer and use something else like Everything.
+
+
 ## 📦 Installation
 
 I have included the standalone .exe and .msi files in this repo.
