@@ -15,6 +15,7 @@ Standard `.zip` and `.tar.gz` leave compression on the table. The custom `.dz` f
 * **Solid Block Serialization**: Strips file boundaries and bundles directory trees into a single, continuous binary payload.
 * **Zstandard Level 22 (Max)**: Enforces Zstd's absolute highest compression barrier using multi-threaded execution (`zstdmt`) across all logical CPU cores.
 * **128MB Long-Distance Matching**: Implements `window_log(27)` to detect and deduplicate redundant data across thousands of files hundreds of megabytes apart within the same archive.
+* **⚠️ Limitations**: Dozip can be comparable to standard `.zip` when compressing small files (10KB), being about 500B smaller. Dozip cannot be uncompressed using any other decompressor.
 
 ### 3. UTF-Tiny V4 (UT4) Text Interception
 FileDozer natively intercepts text and source code before compression and downconverts it into **UT4**—a bespoke encoding formulation:
@@ -26,7 +27,7 @@ FileDozer natively intercepts text and source code before compression and downco
 ## Hardware Information
 I ran everything on a i7-7700 with no GPU and 16 GB of dual-channel RAM at 2400 Mhz on Windows 11 IoT Enterprise LTSC 24H2. Don't worry, I know that LTSC has some requirements stripped down. I have added a dynamic requirement checker that ensures FileDozer runs on most Windows 11 systems.
 
-It indexed 3.3TB in 39 seconds, with 200GB from a Lexar NM620 NVMe SSD. That was indexed in 4 seconds.
+It indexed 3.3TB in 39 seconds, with 200GB from a Lexar NM620 NVMe SSD. That was indexed in 4 seconds. Others were all HDDs.
 
 ## ⚠️ Security precautions
 FileDozer requires admin permissions to use the MFT of your drives to index them lightning fast.
